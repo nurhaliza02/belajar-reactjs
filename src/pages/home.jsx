@@ -1,54 +1,69 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const features = [
+  {
+    title: "About Me 🌷",
+    desc: "A little story about who I am.",
+    link: "/about",
+  },
+  {
+    title: "Projects 🚀",
+    desc: "Some projects I've worked on.",
+    link: "/projects",
+  },
+  {
+    title: "Skills 🛠️",
+    desc: "Technologies I use.",
+    link: "/skills",
+  },
+  {
+    title: "My Journey 🌱",
+    desc: "Experiences and learning moments.",
+    link: "/journey",
+  },
+  {
+    title: "Achievements 🏆",
+    desc: "Certifications and milestones.",
+    link: "/achievements",
+  },
+  {
+    title: "Let's Connect 💌",
+    desc: "Feel free to react out.",
+    link: "/contact",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen ">
-
-      {/* Navbar */}
-      <nav className="w-full flex items-center justify-between px-10 py-6">
-
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <span className="font-semibold text-lg">Portofolio</span>
-        </div>
-
-        {/* Menu */}
-        <div className="flex gap-8 text-blue-500 font-medium">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Skills</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-        </div>
-
-      </nav>
-
-
-      {/* Hero Section */}
-      <section className="w-full flex flex-col items-center text-center py-20">
-
-        {/* Title */}
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight max-w-4xl">
-          Building modern web <br/>
-          applications✨ <br />
+    <div className="min-h-screen bg-[#F8F7FF] py-16 px-36">
+      {/* Header */}
+      <div className="text-center mb-14">
+        <h1 className="text-4xl font-bold text-gray-800">
+          Welcome to{" "}
+          <span className="text-[#FD7979]">
+            {" "}
+            <br />
+            My Digital Space
+          </span>
         </h1>
-
-        {/* Description */}
-        <p className="text-gray-500 mt-6 max-w-2xl">
-          Explore my projects and creative works in web development, 
-          from simple  websites to full web applications.
+        <p className="text-gray-600 mt-3">
+          A cozy place where ideas, creativity, and technology come together
+          💻🌱
         </p>
+      </div>
 
-        {/* Buttons */}
-        <div className="flex gap-6 mt-10">
-          <button className="px-6 py-3 rounded-full border border-gray-300 hover:bg-gray-100">
-            View My Projects →
-          </button>
-
-        </div>
-
-      </section>
-
+      {/* Card */}
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 max-w-5xl mx-auto">
+        {features.map((item, index) => (
+          <Link to={item.link} key={index}>
+            <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer">
+              <h2 className="font-semibold text-lg">{item.title}</h2>
+              <p className="text-gray-500 text-sm mt-2">{item.desc}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
