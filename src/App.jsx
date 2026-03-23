@@ -9,6 +9,8 @@ import About from "./pages/about";
 import SharedLayoutAnimation from "./pages/projects";
 import NameInput from "./pages/useState";
 import DataUser from "./pages/data-user";
+import DetailCards from "./pages/detail-cards";
+import ProductDetail from "./pages/product-detail";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
       <Route path="/motion" element={<ScrollLinked />} />
       <Route path="/useState" element={<NameInput />} />
       <Route path="/data-user" element={<DataUser />} />
+      <Route path="/detail-cards/:userId" element={<DetailCards />} />
+      <Route path="/product-detail/:id" element={<ProductDetail />} />
     </Routes>
   );
 }
