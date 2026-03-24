@@ -28,8 +28,8 @@ export default function DetailCards() {
 
   return (
     <div className="min-h-screen">
+      <button onClick={() => navigate("/data-user")}>Back</button>
       <h1 className="text-4xl font-bold text-dark-grey mb-2">Cart Details</h1>
-
       <>
         <StyleDataUser carts={carts} handleProduct={handleProduct} />
       </>
